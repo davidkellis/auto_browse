@@ -79,7 +79,7 @@ module AutoBrowse
       page_y = frame_offset_y + y
 
       # this imagemagick command performs the crop on the full screenshot
-      # convert images/recaptcha/20210128_161014/tiles.png -crop 95x95+123+154 +repage images/recaptcha/20210128_161014/tile0.png
+      # convert images/captcha/20210128_161014/tiles.png -crop 95x95+123+154 +repage images/captcha/20210128_161014/tile0.png
       image = MiniMagick::Image.open(@last_screenshot_path)
       image.combine_options do |cmd|
         cmd.crop "#{width}x#{height}+#{page_x}+#{page_y}"
