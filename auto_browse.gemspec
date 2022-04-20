@@ -14,8 +14,6 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/davidkellis/auto_browse"
   spec.metadata["changelog_uri"] = "https://github.com/davidkellis/auto_browse"
@@ -32,12 +30,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "lru_redux"
-
-  spec.add_dependency "nokogiri"
-  spec.add_dependency "msgpack"
-  spec.add_dependency "faraday"
-
   spec.add_dependency "capybara"
   spec.add_dependency "cuprite"
   spec.add_dependency "ferrum"
@@ -45,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "bezier_curve"
 
   spec.add_dependency "victor"
-  spec.add_dependency "mini_magick"   # requires imagemagik be installed: brew install imagemagick
+  spec.add_dependency "mini_magick"   # requires imagemagik be installed: `brew install imagemagick` or `sudo apt install imagemagick`
 
 
   # For more information and examples about making a new gem, checkout our
