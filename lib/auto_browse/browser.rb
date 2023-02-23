@@ -37,7 +37,7 @@ module AutoBrowse
       Capybara.default_max_wait_time = timeout
     end
 
-    def self.register
+    def self.register(extra_ferrum_options = {})
       Capybara.javascript_driver = :cuprite
       Capybara.register_driver(:cuprite) do |app|
         # the list of command line flags is enormous: https://peter.sh/experiments/chromium-command-line-switches/
@@ -73,14 +73,14 @@ module AutoBrowse
           "password-store" => "basic"
         }
         chrome_options.merge!(headless: nil) if ENV["HEADLESS"] == "true"
-        
+
         driver_options = {
           window_size: [1440, 900],
           # headless: ENV["HEADLESS"] == "true",    # has no effect
           ignore_default_browser_options: true,
           browser_options: chrome_options
-        }
-        
+        }.merge(extra_ferrum_options)
+
         Capybara::Cuprite::Driver.new(app, driver_options)
       end
     end
