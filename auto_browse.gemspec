@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "capybara"
   spec.add_dependency "cuprite"
   spec.add_dependency "ferrum"
+  spec.add_dependency "nokogiri"
 
   spec.add_dependency "bezier_curve"
 

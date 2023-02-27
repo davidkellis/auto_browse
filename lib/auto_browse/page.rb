@@ -4,7 +4,7 @@ require "mini_magick"
 require_relative "ferrum_ext"
 
 module AutoBrowse
-  
+
   module Pagelike
     def page
       browser.driver
@@ -110,7 +110,7 @@ module AutoBrowse
     def delete_temp_screenshot
       if @last_screenshot && @last_screenshot_path && File.exist?(@last_screenshot_path)
         File.delete(@last_screenshot_path)
-        
+
         @last_screenshot_path = nil
         @last_screenshot = nil
       end
@@ -122,7 +122,7 @@ module AutoBrowse
     include Pagelike
 
     attr_accessor :browser
-    
+
     def initialize(browser)
       @browser = browser
     end
